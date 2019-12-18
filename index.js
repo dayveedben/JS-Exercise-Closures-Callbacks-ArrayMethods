@@ -96,11 +96,7 @@ function processLastItem(stringList, callback) {
  * should return 1000.
 */
 function processSum(numberList,callback) {
-  const array1 = [1, 2, 3, 4];
-const sum = (accumulator, currentValue) => accumulator + currentValue;
-
-return (array1.reduce(sum));
-
+ 
 /**
  * ### Challenge `processProduct`
  * 
@@ -284,7 +280,14 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
+function counterMakerWithLimit(max) {
+  let count = 0;
+  return function counter(){
+    if(count > max){
+      count = 0;
+    }
+    return count++
+  }
   /* CODE HERE */
 }
 
