@@ -55,7 +55,7 @@ function processLength(list, callback) {
   const array = [];
   return callback(list.length)
   
-}
+};
 
 /**
  * ### Challenge `processLastItem`
@@ -74,9 +74,9 @@ function processLength(list, callback) {
 function processLastItem(stringList, callback) {
   const lastItem = stringList[stringList.length-1];{
   return callback(lastItem)
-    }
+  }
   /* CODE HERE */
-}
+};
 
 /**
  * ### Challenge `processSum`
@@ -100,6 +100,7 @@ function processSum(numberList,callback) {
     return accumulator + currentValue;
 
   }, 0);
+  
   return callback(sum);
 
 }
@@ -272,10 +273,10 @@ function counterMaker() {
   // BROKEN CODE STARTS
   let count = -1;
   return function counter() {
-   return count++
+   return count++;
   }
   // BROKEN CODE ENDS
-}
+};
 
 /**
  * ### Challenge `counterMakerWithLimit`
