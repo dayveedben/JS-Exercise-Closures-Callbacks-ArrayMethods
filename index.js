@@ -1,5 +1,4 @@
-// ⭐️ Example Challenge START ⭐️
-
+// :star:️ Example Challenge START :star:️
 /**
  * ### Challenge `processFirstItem`
  * 
@@ -16,21 +15,13 @@
 */
 function processFirstItem(stringList, callback) {
   return callback(stringList[0])
-};
-
-// function processFirstItem(stringList, callback) {
-//   return callback(stringList[0])
-// }
-// ⭐️ Example Challenge END ⭐️
-
-
-// 👇 COMPLETE YOUR WORK BELOW 👇
-// 👇 COMPLETE YOUR WORK BELOW 👇
-// 👇 COMPLETE YOUR WORK BELOW 👇
-
+}
+// :star:️ Example Challenge END :star:️
+// :point_down: COMPLETE YOUR WORK BELOW :point_down:
+// :point_down: COMPLETE YOUR WORK BELOW :point_down:
+// :point_down: COMPLETE YOUR WORK BELOW :point_down:
 /////////////// CALLBACKS AND HIGHER-ORDER FUNCTIONS ///////////////
 /////////////// CALLBACKS AND HIGHER-ORDER FUNCTIONS ///////////////
-
 /**
  * ### Challenge `processLength`
  * 
@@ -52,11 +43,9 @@ function processFirstItem(stringList, callback) {
  * should return "There are 0".
 */
 function processLength(list, callback) {
-  const array = [];
-  return callback(list.length)
-  
-};
-
+  /* CODE HERE */
+  return callback(list.length);
+}
 /**
  * ### Challenge `processLastItem`
  * 
@@ -72,12 +61,9 @@ function processLength(list, callback) {
  * should return 'barbar'.
 */
 function processLastItem(stringList, callback) {
-  const lastItem = stringList[stringList.length-1];{
-  return callback(lastItem)
-  }
   /* CODE HERE */
-};
-
+  return callback(stringList[stringList.length-1]);
+}
 /**
  * ### Challenge `processSum`
  * 
@@ -95,16 +81,13 @@ function processLastItem(stringList, callback) {
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
 */
-function processSum(numberList,callback) {
-  const sum = numberList.reduce(function (accumulator, currentValue){
+function processSum(numberList, callback) {
+  /* CODE HERE */
+  const sum = numberList.reduce(function (accumulator, currentValue) {
     return accumulator + currentValue;
-
   }, 0);
-  
   return callback(sum);
-
 }
- 
 /**
  * ### Challenge `processProduct`
  * 
@@ -124,10 +107,9 @@ function processSum(numberList,callback) {
  * should return 1000.
 */
 function processProduct(num1, num2, callback) {
-  return callback(num1 * num2);
   /* CODE HERE */
+  return callback(num1 * num2);
 }
-
 /**
  * ### Challenge `processContains`
  * 
@@ -149,10 +131,10 @@ function processProduct(num1, num2, callback) {
  * should return "sad".
 */
 function processContains(item, list, callback) {
-
+  /* CODE HERE */
   return callback(list.includes(item));
-
-
+  
+}
 /**
  * ### Challenge `processDuplicateFree`
  * THIS IS A STRETCH PROBLEM! ATTEMPT ONLY AFTER COMPLETING ALL NON-STRETCH CHALLENGES!
@@ -172,18 +154,15 @@ function processContains(item, list, callback) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(list, callback) {
+function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
 }
-
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
-
 // A local community center is holding a fund raising 5k fun run and has invited
 // 50 small businesses to make a small donation on their behalf for some much needed
 // updates to their facilities. Each business has assigned a representative
 // to attend the event along with a small donation.
-
 /**
  * ### Challenge `getFullNames`
  * 
@@ -196,11 +175,12 @@ function processDuplicateFree(list, callback) {
 */
 function getFullNames(runners) {
   /* CODE HERE */
-  const newArray = [];
-  runners.forEach(newArray.push(`${this.name}`, `${this.first_name}`));
-  return newArray;
+  const fullNames = [];
+  runners.forEach(function(items) {
+    fullNames.push(`${items.last_name}, ${items.first_name}`);
+  });
+  return fullNames;
 }
-
 /**
  * ### Challenge `firstNamesAllCaps`
  * 
@@ -214,12 +194,11 @@ function getFullNames(runners) {
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
 function firstNamesAllCaps(runners) {
-  return runners.map(function(items) {
-    return items.first_name.toUpperCase();
-  });
   /* CODE HERE */
+  return runners.map(function(items) {
+   return items.first_name.toUpperCase();
+  });
 }
-
 /**
  * ### Challenge `getRunnersByTShirtSize`
  * 
@@ -234,14 +213,11 @@ function firstNamesAllCaps(runners) {
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
 function getRunnersByTShirtSize(runners, tShirtSize) {
-runners.filter(function(items){
-return items.shirt_size === tShirtSize;
-})
- 
-
   /* CODE HERE */
+  return runners.filter(function(items){
+    return items.shirt_size === tShirtSize;
+  })
 }
-
 /**
  * ### Challenge `tallyUpDonations`
  * 
@@ -254,14 +230,12 @@ return items.shirt_size === tShirtSize;
 */
 function tallyUpDonations(runners) {
   /* CODE HERE */
-  return runners.reduce(function(total, currentRunner){
+  return runners.reduce(function(total, currentRunner) {
     return total + currentRunner.donation;
   }, 0)
 }
-
 /////////////// CLOSURES ///////////////
 /////////////// CLOSURES ///////////////
-
 /**
  * ### Challenge `counterMaker`
  * 
@@ -274,16 +248,15 @@ function tallyUpDonations(runners) {
  * counter() // should return 1
  * counter() // should return 2
  * etc
-**/
+*/
 function counterMaker() {
   // BROKEN CODE STARTS
   let count = -1;
   return function counter() {
-   return count++;
+    return ++count;
   }
   // BROKEN CODE ENDS
 };
-
 /**
  * ### Challenge `counterMakerWithLimit`
  * 
@@ -305,19 +278,18 @@ function counterMaker() {
  * etc
 */
 function counterMakerWithLimit(maxValue) {
+  /* CODE HERE */
   let count = 0;
-  return function counter(){
-    if(count > maxValue){
+  return function counter() {
+    if(count > maxValue) {
       count = 0;
     }
     return count++;
   }
 }
-
 /////////////// END OF CHALLENGE ///////////////
 /////////////// END OF CHALLENGE ///////////////
 /////////////// END OF CHALLENGE ///////////////
-
 if (typeof exports !== 'undefined') {
   // IGNORE: Test/Env Detected
   // For Node/Non-browser test env
@@ -336,5 +308,3 @@ if (typeof exports !== 'undefined') {
   if (counterMaker) { module.exports.counterMaker = counterMaker }
   if (counterMakerWithLimit) { module.exports.counterMakerWithLimit = counterMakerWithLimit }
 }
-}
-
